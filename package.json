@@ -1,0 +1,29 @@
+{
+  "name": "sabbat-widget",
+  "version": "1.0.0",
+  "description": "Wheel of the Year companion widget",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win portable",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.celestial.wheeloftheyear",
+    "productName": "Wheel of the Year",
+    "win": {
+      "target": "portable"
+    },
+    "files": [
+      "src/**/*",
+      "main.js",
+      "preload.js",
+      "package.json",
+      "assets/**/*"
+    ]
+  }
+}

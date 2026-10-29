@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wheel of the Year</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lexend:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/widget.css">
+</head>
+<body>
+  <main class="widget" id="widget">
+    <header class="widget-header" id="dragBar">
+      <div class="header-title">
+        <span class="title-diamond">✦</span>
+        <span class="title-text">WHEEL OF THE YEAR</span>
+        <span class="title-diamond">✦</span>
+      </div>
+      <div class="header-subtitle">TURNING OF THE SEASONS</div>
+    </header>
+
+    <section class="wheel-stage" id="wheelStage" aria-label="Wheel of the Year">
+      <div class="wheel-wrapper">
+        <svg id="wheel-svg" viewBox="0 0 280 280" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Wheel of the Year">
+          <defs>
+            <path id="arc-mabon" d="M73.943 112.638 A71.5 71.5 0 0 1 112.638 73.943"/>
+            <path id="arc-samhain" d="M112.638 73.943 A71.5 71.5 0 0 1 167.362 73.943"/>
+            <path id="arc-yule" d="M167.362 73.943 A71.5 71.5 0 0 1 206.057 112.638"/>
+            <path id="arc-imbolc" d="M206.057 112.638 A71.5 71.5 0 0 1 206.057 167.362"/>
+            <path id="arc-lammas" d="M73.943 167.362 A71.5 71.5 0 0 1 73.943 112.638"/>
+            <path id="arc-litha" d="M68.399 169.658 A77.5 77.5 0 0 0 110.342 211.601"/>
+            <path id="arc-beltane" d="M110.342 211.601 A77.5 77.5 0 0 0 169.658 211.601"/>
+            <path id="arc-ostara" d="M169.658 211.601 A77.5 77.5 0 0 0 211.601 169.658"/>
+            <filter id="needle-glow" x="-100%" y="-30%" width="300%" height="160%">
+              <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#E3C896" flood-opacity="0.45"/>
+            </filter>
+
+            <linearGradient id="needle-brass" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFF5E4"/>
+              <stop offset="45%" stop-color="#E4CBA2"/>
+              <stop offset="100%" stop-color="#AA8855"/>
+            </linearGradient>
+            <radialGradient id="dial-backlight" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="rgba(227, 200, 150, 0.12)"/>
+              <stop offset="90%" stop-color="rgba(0, 0, 0, 0)"/>
+            </radialGradient>
+            <radialGradient id="hub-gradient" cx="40%" cy="35%" r="70%">
+              <stop offset="0%" stop-color="#F4EAE1"/>
+              <stop offset="55%" stop-color="#E3C896"/>
+              <stop offset="100%" stop-color="#9C8456"/>
+            </radialGradient>
+
+            <symbol id="star-8" viewBox="-10 -10 20 20">
+              <polygon points="0,-10 0.65,-1.57 3.89,-3.89 1.57,-0.65 10,0 1.57,0.65 3.89,3.89 0.65,1.57 0,10 -0.65,1.57 -3.89,3.89 -1.57,0.65 -10,0 -1.57,-0.65 -3.89,-3.89 -0.65,-1.57" fill="currentColor"/>
+            </symbol>
+            <symbol id="star-4" viewBox="-10 -10 20 20">
+              <polygon points="0,-10 1.1,-1.1 10,0 1.1,1.1 0,10 -1.1,1.1 -10,0 -1.1,-1.1" fill="currentColor"/>
+            </symbol>
+          </defs>
+
+          <circle cx="140" cy="140" r="130" fill="url(#dial-backlight)"/>
+          <image href="../assets/sabbat-wheel.png" x="12" y="12" width="256" height="256" preserveAspectRatio="xMidYMid meet"/>
+
+          <g id="outer-frame">
+            <path class="frame-arc" d="M151.98 6.54 A134 134 0 0 1 226.66 37.8"/>
+            <path class="frame-arc" d="M242.2 53.34 A134 134 0 0 1 273.46 128.02"/>
+            <path class="frame-arc" d="M273.46 151.98 A134 134 0 0 1 242.2 226.66"/>
+            <path class="frame-arc" d="M226.66 242.2 A134 134 0 0 1 151.98 273.46"/>
+            <path class="frame-arc" d="M128.02 273.46 A134 134 0 0 1 53.34 242.2"/>
+            <path class="frame-arc" d="M37.8 226.66 A134 134 0 0 1 6.54 151.98"/>
+            <path class="frame-arc" d="M6.54 128.02 A134 134 0 0 1 37.8 53.34"/>
+            <path class="frame-arc" d="M53.34 37.8 A134 134 0 0 1 128.02 6.54"/>
+            <use class="star" href="#star-8" x="134" y="0" width="12" height="12"/>
+            <use class="star" href="#star-8" x="268" y="134" width="12" height="12"/>
+            <use class="star" href="#star-8" x="134" y="268" width="12" height="12"/>
+            <use class="star" href="#star-8" x="0" y="134" width="12" height="12"/>
+            <use class="star" href="#star-4" x="229.75" y="40.25" width="10" height="10"/>
+            <use class="star" href="#star-4" x="229.75" y="229.75" width="10" height="10"/>
+            <use class="star" href="#star-4" x="40.25" y="229.75" width="10" height="10"/>
+            <use class="star" href="#star-4" x="40.25" y="40.25" width="10" height="10"/>
+          </g>
+          <g id="interactive-slices"></g>
+          <g id="text-labels">
+            <text text-anchor="middle"><textPath href="#arc-mabon" startOffset="50%">MABON</textPath></text>
+            <text text-anchor="middle"><textPath href="#arc-samhain" startOffset="50%">SAMHAIN</textPath></text>
+            <text text-anchor="middle"><textPath href="#arc-yule" startOffset="50%">YULE</textPath></text>
+            <text text-anchor="middle"><textPath href="#arc-imbolc" startOffset="50%">IMBOLC</textPath></text>
+            <text text-anchor="middle"><textPath href="#arc-lammas" startOffset="50%">LAMMAS</textPath></text>
+            <text text-anchor="middle"><textPath href="#arc-litha" startOffset="50%">LITHA</textPath></text>
+            <text text-anchor="middle"><textPath href="#arc-beltane" startOffset="50%">BELTANE</textPath></text>
+            <text text-anchor="middle"><textPath href="#arc-ostara" startOffset="50%">OSTARA</textPath></text>
+          </g>
+          <g id="dial-needle">
+          <g transform="translate(0.8 0.5)">
+            <path fill="url(#needle-brass)" stroke="#F4EAE1" stroke-width="0.35" stroke-linejoin="round" fill-rule="evenodd"
+              d="M139,133 L141,133 L141.3,129 C144.8,124 144.2,112 141.6,106 L141.1,102.5 L140.9,97.5 L146.8,86.5 L141.4,77 L140.4,73 L140,70 L139.6,73 L138.6,77 L133.2,86.5 L139.1,97.5 L138.9,102.5 L138.4,106 C135.8,112 135.2,124 138.7,129 Z M140,92 L143.2,86.5 L140,80 L136.8,86.5 Z"/>
+            <circle cx="140" cy="100.3" r="2.3" fill="url(#needle-brass)" stroke="#F4EAE1" stroke-width="0.35"/>
+            <path fill="url(#needle-brass)" stroke="#F4EAE1" stroke-width="0.35" fill-rule="evenodd"
+              d="M132,140 a8,8 0 1,0 16,0 a8,8 0 1,0 -16,0 Z M137.6,140 a2.4,2.4 0 1,0 4.8,0 a2.4,2.4 0 1,0 -4.8,0 Z"/>
+            <circle cx="140" cy="140" r="2.4" fill="none" stroke="#9C8456" stroke-width="0.7"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+
+    <article class="info-card" id="infoCard" aria-live="polite">
+      <div class="divider" aria-hidden="true">
+        <span class="diamond"></span><span class="line"></span><span class="diamond"></span>
+      </div>
+      <div class="metrics">
+        <div class="metric">
+          <span class="metric-label">Next Sabbat</span>
+          <strong class="metric-value" id="nextFestival">&mdash;</strong>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Days Remaining</span>
+          <strong class="metric-value" id="daysRemaining">&mdash;</strong>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <script src="js/ephemeris.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>
